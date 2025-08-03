@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the basics of semantic HTML5, accessibility, and SEO by exploring this beginner-friendly example web page." />
+  <meta name="keywords" content="HTML5, accessibility, SEO, semantic tags, web development" />
+  <meta name="author" content="Your Name" />
+  <title>HTML5, Accessibility, and SEO Basics</title>
+</head>
+<body>
+
+  <!-- Header with semantic heading and accessibility landmark -->
+  <header role="banner">
+    <h1>Welcome to Semantic HTML5</h1>
+    <p>Building accessible and SEO-friendly web pages with proper structure.</p>
+  </header>
+
+  <!-- Navigation with proper semantic element and ARIA label -->
+  <nav role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#accessibility">Accessibility</a></li>
+      <li><a href="#seo">SEO Basics</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content section with clear headings and logical structure -->
+  <main role="main">
+    <section id="about">
+      <h2>About This Page</h2>
+      <p>This page is built using only HTML5 to demonstrate how to apply semantic elements, accessibility practices, and SEO techniques.</p>
+    </section>
+
+    <section id="accessibility">
+      <h2>Accessibility Matters</h2>
+      <p>Semantic HTML5 helps screen readers and other assistive technologies better understand your content. Use headings in order, label navigation, and use landmarks like <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code>.</p>
+    </section>
+
+    <section id="seo">
+      <h2>SEO Basics</h2>
+      <article>
+        <h3>Use Descriptive Titles and Metadata</h3>
+        <p>Ensure your <code>&lt;title&gt;</code> and <code>&lt;meta name="description"&gt;</code> accurately describe your page for search engines and social media.</p>
+      </article>
+
+      <article>
+        <h3>Structure Content with Headings</h3>
+        <p>Use <code>&lt;h1&gt;</code> for the main title and descend in order through <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, etc., to help both readers and crawlers navigate content.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer with contact information and appropriate landmarks -->
+  <footer role="contentinfo" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+    <p>&copy; 2025 Semantic Web Demo. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
