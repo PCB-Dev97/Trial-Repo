@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    header, main, footer {
+      margin-bottom: 20px;
+    }
+    form {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    table, th, td {
+      border: 1px solid #333;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    video, img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>User Registration Portal</h1>
+    <p>Fill out the form below to register for our services.</p>
+  </header>
+
+  <main>
+    <form action="/submit" method="post" autocomplete="on">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1234567890" pattern="\\+?[0-9\\-]{7,15}" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required minlength="6" />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" list="countries" placeholder="Start typing..." required />
+      <datalist id="countries">
+        <option value="Kenya">
+        <option value="Uganda">
+        <option value="Tanzania">
+        <option value="Nigeria">
+        <option value="South Africa">
+      </datalist>
+
+      <label for="bio">Short Bio:</label>
+      <textarea id="bio" name="bio" placeholder="Tell us about yourself" rows="4"></textarea>
+
+      <label for="skills">Skills (readonly):</label>
+      <input type="text" id="skills" value="HTML, CSS, JavaScript" readonly />
+
+      <label>
+        <input type="checkbox" name="terms" required /> I agree to the terms and conditions
+      </label>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <section>
+      <h2>Benefits of Registering</h2>
+      <ul>
+        <li>Access to exclusive content</li>
+        <li>Personalized user dashboard</li>
+        <li>Priority customer support</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Subscription Plans</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Features</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>Access to free content</td>
+            <td>$0</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>All content + dashboard</td>
+            <td>$10/month</td>
+          </tr>
+          <tr>
+            <td>Premium</td>
+            <td>Pro features + support</td>
+            <td>$20/month</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Welcome Video</h2>
+      <video controls>
+        <source src=\"welcome.mp4\" type=\"video/mp4\">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Registration Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
