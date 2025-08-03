@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- SEO metadata -->
+  <title>Oracle Financial ERP Implementation – Case Study</title>
+  <meta name="description"
+        content="Learn how Oracle Financial modules (GL, AP, AR, FA, CM) were implemented for a medium‑large enterprise, improving month‑end close automation, reconciliation, and reporting." />
+  <meta name="keywords"
+        content="Oracle ERP, Financial consultant, GL, AP, AR, Fixed Assets, Cash Management, Oracle implementation" />
+  <!-- Social share preview -->
+  <meta property="og:title" content="Oracle Financial ERP Implementation" />
+  <meta property="og:description"
+        content="Explore improvements in invoice processing, reconciliation, and close cycle using Oracle Financial modules." />
+</head>
+<body>
+  <!-- Skip link for screen reader & keyboard users -->
+  <a class="visually-hidden focusable" href="#main" aria-label="Skip to main content">Skip to main content</a>
+
+  <header>
+    <h1>Oracle Financial ERP Implementation</h1>
+    <nav aria-label="Main site navigation">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#modules">Oracle Modules</a></li>
+        <li><a href="#benefits">Business Benefits</a></li>
+        <li><a href="#accessibility">Accessibility Features</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Project Overview</h2>
+      <p>This implementation covered GL, AP, AR, CM and Fixed Assets modules for a mid‑sized retail client, aiming to streamline invoice processing, automate reconciliations, and support IFRS-compliant financial reporting.</p>
+    </section>
+
+    <section id="modules" aria-labelledby="modules-heading">
+      <h2 id="modules-heading">Oracle Financial Modules</h2>
+      <article aria-labelledby="gl-heading">
+        <h3 id="gl-heading">General Ledger (GL)</h3>
+        <p>Configured a multi-segment chart of accounts, automated journal imports, and optimized monthly close processes.</p>
+      </article>
+      <article aria-labelledby="ap-heading">
+        <h3 id="ap-heading">Accounts Payable (AP)</h3>
+        <p>Implemented invoice automation, supplier self-correction portals, and discount capture logic.</p>
+      </article>
+      <article aria-labelledby="ar-heading">
+        <h3 id="ar-heading">Accounts Receivable (AR)</h3>
+        <p>Streamlined invoice posting, credit control workflows, and automated payment matching.</p>
+      </article>
+      <article aria-labelledby="fa-heading">
+        <h3 id="fa-heading">Fixed Assets (FA)</h3>
+        <p>Automated asset acquisition, depreciation, transfer, and disposal schedules.</p>
+      </article>
+      <article aria-labelledby="cm-heading">
+        <h3 id="cm-heading">Cash Management (CM)</h3>
+        <p>Implemented bank statement auto-reconciliation and daily cash forecasting dashboards.</p>
+      </article>
+    </section>
+
+    <section id="benefits" aria-labelledby="benefits-heading">
+      <h2 id="benefits-heading">Business Benefits</h2>
+      <ul>
+        <li>Invoice processing time reduced from 10 to under 3 days</li>
+        <li>Close cycle shortened by 75% through continuous reconciliation</li>
+        <li>Improved reporting accuracy with audit-ready journal trails</li>
+        <li>Compliance with IFRS revenue, lease, and financial instruments standards</li>
+      </ul>
+    </section>
+
+    <section id="accessibility" aria-labelledby="accessibility-heading">
+      <h2 id="accessibility-heading">Accessibility & Usability Features</h2>
+      <p>This page uses a clear heading hierarchy (<code>&lt;h1&gt;</code> to <code>&lt;h3&gt;</code>) and landmarks such as <code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> for seamless keyboard and screen-reader navigation (<a href="https://www.w3.org/TR/html-aria/#docconformance">ARIA landmark roles</a>), enhancing accessibility and semantic clarity <cite>(MDN accessibility guide)</cite></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 by Your Name. Built using semantic & accessible HTML5 for client implementation documentation.</p>
+  </footer>
+</body>
+</html>
