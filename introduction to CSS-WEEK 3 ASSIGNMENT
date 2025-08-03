@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Styled Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="box">
+    <h1>Welcome to My Styled Page</h1>
+    <p>This page demonstrates basic HTML and CSS structure.</p>
+  </header>
+
+  <main class="box">
+    <section>
+      <h2>About This Page</h2>
+      <p>This is a simple page designed to demonstrate:</p>
+      <ul>
+        <li>Proper use of CSS selectors</li>
+        <li>Box model implementation</li>
+        <li>Consistent layout and spacing</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact Info</h2>
+      <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="box">
+    <p>&copy; 2025 My Styled Page. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header, Main, Footer Layout */
+header, main, footer {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Box Model Demonstration */
+.box {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Element Selectors */
+h1, h2 {
+  color: #005577;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
