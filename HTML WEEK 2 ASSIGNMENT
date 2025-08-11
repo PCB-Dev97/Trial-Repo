@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Enhanced HTML5 Form — enhanced-form.html</title>
+  <meta name="description" content="An accessible, semantic HTML5 page containing an enhanced form with validation, lists, tables, and media.">
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;color:#222}
+    body{margin:0;padding:1.5rem;background:#f7f8fb}
+    .container{max-width:900px;margin:0 auto;background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    header, main, footer{display:block}
+    header h1{margin:0 0 .25rem;font-size:1.5rem}
+    header p{margin:0 0 1rem;color:#555}
+    nav ul{display:flex;gap:.5rem;list-style:none;padding:0;margin:0 0 1rem}
+    nav a{padding:.4rem .6rem;background:#eef; border-radius:6px;text-decoration:none;color:#064}
+    form{display:grid;grid-template-columns:1fr;gap:1rem}
+    fieldset{border:1px solid #e2e6ef;padding:1rem;border-radius:6px}
+    legend{font-weight:600}
+    .row{display:flex;gap:1rem;flex-wrap:wrap}
+    label{display:block;font-size:.95rem;margin-bottom:.25rem}
+    input,select,textarea{width:100%;padding:.5rem;border:1px solid #d0d4e0;border-radius:6px}
+    .small{max-width:220px}
+    table{width:100%;border-collapse:collapse;margin-top:.5rem}
+    th,td{border:1px solid #e6e9f2;padding:.5rem;text-align:left}
+    .media{display:flex;gap:1rem;flex-wrap:wrap}
+    .actions{display:flex;gap:.5rem;align-items:center}
+    button{padding:.55rem .9rem;border-radius:8px;border:0;cursor:pointer}
+    button[type="submit"]{background:#0069d9;color:#fff}
+    button[type="reset"]{background:#e6e6e6}
+    .note{font-size:.85rem;color:#666}
+    footer{margin-top:1rem;font-size:.85rem;color:#666}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Enhanced HTML5 Form</h1>
+      <p>An example of a semantic, accessible HTML5 page with lists, tables, media, and a validated form. All form fields use modern attributes such as <code>placeholder</code>, <code>required</code>, <code>autocomplete</code>, <code>readonly</code>, and HTML5 validation patterns.</p>
+      <nav aria-label="Page navigation">
+        <ul>
+          <li><a href="#form">Form</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#summary">Summary</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="form" aria-labelledby="form-heading">
+        <h2 id="form-heading">Registration & Preferences</h2>
+
+        <form action="#" method="post" autocomplete="on" novalidate="false">
+
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="row">
+              <div style="flex:1 1 280px">
+                <label for="fullname">Full name <span aria-hidden="true">*</span></label>
+                <input id="fullname" name="fullname" type="text" placeholder="e.g. Aisha Mwangi" minlength="3" maxlength="100" required autocomplete="name">
+                <p class="note">Use letters only; minimum 3 characters.</p>
+              </div>
+
+              <div style="flex:1 1 220px" class="small">
+                <label for="username">Username (readonly)</label>
+                <input id="username" name="username" type="text" value="guest_user_123" readonly aria-readonly="true" autocomplete="username">
+                <p class="note">This is an example of a readonly field.</p>
+              </div>
+
+              <div style="flex:1 1 220px" class="small">
+                <label for="email">Email address <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" placeholder="name@example.com" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="row">
+              <div style="flex:1 1 220px" class="small">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+254712345678" pattern="^\+?[0-9 \-()]{7,20}$" autocomplete="tel">
+                <p class="note">International format recommended. Pattern enforces digits and common separators.</p>
+              </div>
+
+              <div style="flex:1 1 180px" class="small">
+                <label for="dob">Date of birth</label>
+                <input id="dob" name="dob" type="date" max="2007-12-31" autocomplete="bday">
+                <p class="note">Users must be at most 18 years old in this example (max date enforced).</p>
+              </div>
+
+              <div style="flex:1 1 160px" class="small">
+                <label for="timepref">Preferred contact time</label>
+                <input id="timepref" name="timepref" type="time">
+              </div>
+            </div>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Account security</legend>
+            <div class="row">
+              <div style="flex:1 1 300px">
+                <label for="password">Password <span aria-hidden="true">*</span></label>
+                <input id="password" name="password" type="password" minlength="8" maxlength="72" placeholder="At least 8 characters" required autocomplete="new-password">
+                <p class="note">Must be 8–72 characters.</p>
+              </div>
+
+              <div style="flex:1 1 300px">
+                <label for="confirm">Confirm password</label>
+                <input id="confirm" name="confirm" type="password" minlength="8" maxlength="72" placeholder="Repeat your password" required autocomplete="new-password">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferences & selections</legend>
+            <div class="row">
+              <div style="flex:1 1 240px">
+                <label for="country">Country</label>
+                <select id="country" name="country" autocomplete="country">
+                  <option value="">Choose your country</option>
+                  <option value="KE">Kenya</option>
+                  <option value="UG">Uganda</option>
+                  <option value="TZ">Tanzania</option>
+                  <option value="US">United States</option>
+                </select>
+              </div>
+
+              <div style="flex:1 1 200px" class="small">
+                <label for="language">Preferred language</label>
+                <input id="language" name="language" list="langs" placeholder="Choose or type" autocomplete="language">
+                <datalist id="langs">
+                  <option value="English">
+                  <option value="Kiswahili">
+                  <option value="French">
+                  <option value="Arabic">
+                </datalist>
+              </div>
+
+              <div style="flex:1 1 220px" class="small">
+                <label for="newsletter">Subscribe to newsletter</label>
+                <select id="newsletter" name="newsletter" autocomplete="off">
+                  <option value="yes">Yes — weekly</option>
+                  <option value="no" selected>No thanks</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset>
+              <legend>Interests</legend>
+              <label><input type="checkbox" name="interest" value="tech"> Technology</label>
+              <label><input type="checkbox" name="interest" value="finance"> Finance</label>
+              <label><input type="checkbox" name="interest" value="sports"> Sports</label>
+              <label><input type="checkbox" name="interest" value="music"> Music</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Gender (radio)</legend>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="other"> Other</label>
+            </fieldset>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Quantitative & file inputs</legend>
+            <div class="row">
+              <div style="flex:1 1 220px" class="small">
+                <label for="age">Age</label>
+                <input id="age" name="age" type="number" min="0" max="120" step="1" placeholder="e.g. 29">
+              </div>
+
+              <div style="flex:1 1 220px" class="small">
+                <label for="salary">Expected salary (USD)</label>
+                <input id="salary" name="salary" type="range" min="100" max="10000" step="50" aria-valuemin="100" aria-valuemax="10000">
+                <p class="note">Use the handle to indicate an approximate salary range.</p>
+              </div>
+
+              <div style="flex:1 1 260px">
+                <label for="website">Personal website</label>
+                <input id="website" name="website" type="url" placeholder="https://example.com" autocomplete="url">
+              </div>
+            </div>
+
+            <div class="row">
+              <div style="flex:1 1 420px">
+                <label for="resume">Upload resume (PDF, max 2MB)</label>
+                <input id="resume" name="resume" type="file" accept="application/pdf" aria-describedby="resume-help">
+                <div id="resume-help" class="note">Accepted: PDF only. Max file size not enforced client-side here but server-side validation is required.</div>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Open response</legend>
+            <label for="bio">Short bio (max 300 chars)</label>
+            <textarea id="bio" name="bio" rows="5" maxlength="300" placeholder="Tell us a little about yourself..." autocomplete="off"></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Accessibility checks & summary</legend>
+            <p class="note">This section demonstrates semantic markup, accessible labels, and in-form hints.</p>
+
+            <label for="summary-choice">How did you hear about us?</label>
+            <select id="summary-choice" name="referrer" required>
+              <option value="">Please choose</option>
+              <option value="friend">Friend or colleague</option>
+              <option value="search">Search engine</option>
+              <option value="ad">Advertisement</option>
+            </select>
+
+            <div class="actions" role="group" aria-label="Form actions">
+              <button type="submit">Submit form</button>
+              <button type="reset">Reset</button>
+              <p class="note" aria-live="polite">Required fields are marked using the browser's native validation.</p>
+            </div>
+          </fieldset>
+
+        </form>
+
+      </section>
+
+      <aside id="resources" aria-labelledby="resources-heading">
+        <h3 id="resources-heading">Resources & examples</h3>
+
+        <h4>Quick list</h4>
+        <ul>
+          <li>Semantic tags: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+          <li>Form controls with labels and <code>autocomplete</code>.</li>
+          <li>HTML5 validation attributes: <code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code>.</li>
+        </ul>
+
+        <h4>Sample data table</h4>
+        <table aria-describedby="table-desc">
+          <caption id="table-desc">Example user summary table</caption>
+          <thead>
+            <tr><th>Name</th><th>Country</th><th>Subscribed</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Aisha Mwangi</td><td>Kenya</td><td>Yes</td></tr>
+            <tr><td>James Otieno</td><td>Uganda</td><td>No</td></tr>
+            <tr><td>Maria N.</td><td>Tanzania</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Media examples</h4>
+        <div class="media">
+          <figure>
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%' height='100%' fill='%23dde8ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23007bff'>Placeholder image</text></svg>" alt="Placeholder thumbnail" width="320" height="180">
+            <figcaption class="note">Illustrative placeholder image (SVG data URI).</figcaption>
+          </figure>
+
+          <figure>
+            <video width="320" height="180" controls>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              Your browser does not support the video element.
+            </video>
+            <figcaption class="note">Demo video (external source).</figcaption>
+          </figure>
+        </div>
+
+      </aside>
+
+      <section id="summary" aria-labelledby="summary-heading">
+        <h3 id="summary-heading">Page summary</h3>
+        <ol>
+          <li>Semantic structure and accessible labels.</li>
+          <li>Variety of input types demonstrating HTML5 features.</li>
+          <li>Client-side validation using native attributes and patterns.</li>
+        </ol>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>File: <code>enhanced-form.html</code> — Built with accessibility and validation in mind.</p>
+    </footer>
+  </div>
+</body>
+</html>
