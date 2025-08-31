@@ -1,0 +1,49 @@
+class Superpowered:
+    def __init__(self, name: str, power: str):
+        self.name = name
+        self.power = power
+
+    def show_power(self):
+        print(f"{self.name} uses {self.power}!")
+
+class Superhero(Superpowered):
+    def __init__(self, name: str, power: str, moral_alignment: str = "Good"):
+        super().__init__(name, power)
+        self.moral_alignment = moral_alignment
+
+    def show_power(self):
+        print(f"🦸 {self.name}, the {self.moral_alignment} hero, uses {self.power} for justice!")
+
+    def fight_crime(self):
+        print(f"{self.name} is fighting crime!")
+
+class Supervillain(Superpowered):
+    def __init__(self, name: str, power: str, evil_plan: str):
+        super().__init__(name, power)
+        self.evil_plan = evil_plan
+
+    def show_power(self):
+        print(f"😈 {self.name}, the villain, unleashes {self.power} to {self.evil_plan}!")
+
+    def monologue(self):
+        print(f"{self.name}: 'You cannot stop me!'")
+
+DESIGN AND TEST
+def main():
+    sh = Superhero("Aurora", "Light Beams")
+    sv = Supervillain("Shadowmonger", "Darkness", evil_plan="shroud the world in eternal night")
+
+    for character in (sh, sv):
+        character.show_power()  # Calls overridden method
+
+    sh.fight_crime()
+    sv.monologue()
+
+if __name__ == "__main__":
+    main()
+
+RUNNING THE THIS;
+🦸 Aurora, the Good hero, uses Light Beams for justice!
+😈 Shadowmonger, the villain, unleashes Darkness to shroud the world in eternal night!
+Aurora is fighting crime!
+Shadowmonger: 'You cannot stop me!'
