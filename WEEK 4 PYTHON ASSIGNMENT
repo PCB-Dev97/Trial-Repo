@@ -1,0 +1,36 @@
+def process_content(content: str) -> str:
+    """
+    Modify the file content as needed.
+    For example, convert to uppercase.
+    """
+    return content.upper()
+
+def read_and_write(input_filename: str, output_filename: str) -> None:
+    """
+    Reads from input_filename, applies transformation,
+    and writes result to output_filename.
+    """
+    try:
+        with open(input_filename, 'r', encoding='utf-8') as infile:
+            content = infile.read()
+    except FileNotFoundError:
+        print(f"Error: '{input_filename}' not found.")
+        return
+    except PermissionError:
+        print(f"Error: Permission denied reading '{input_filename}'.")
+        return
+    except IOError as e:
+        print(f"I/O error when reading '{input_filename}': {e}")
+        return
+
+    new_content = process_content(content)
+
+    try:
+        with open(output_filename, 'w', encoding='utf-8') as outfile:
+            outfile.write(new_content)
+    except PermissionError:
+        print(f"Error: Permission denied writing to '{output_filename}'.")
+    except IOError as e:
+        print(f"I/O error when writing to '{output_filename}': {e}")
+    else:
+        print(f"Successfully wrote modified content to '{output_filename}'.")
