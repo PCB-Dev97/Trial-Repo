@@ -1,0 +1,92 @@
+from pptx import Presentation
+from pptx.util import Inches, Pt
+
+# Function to add a bullet-content slide
+def add_bullet_slide(prs, title, bullet_points):
+    layout = prs.slide_layouts[1]  # Title and Content layout
+    slide = prs.slides.add_slide(layout)
+    slide.shapes.title.text = title
+    tf = slide.placeholders[1].text_frame
+    tf.text = bullet_points[0]  # First bullet
+    for point in bullet_points[1:]:
+        p = tf.add_paragraph()
+        p.text = point
+        p.level = 1
+    return slide
+
+def create_learnwise_deck(filename="LearnWise_PitchDeck.pptx"):
+    prs = Presentation()
+    prs.slide_width = Inches(13.33)   # Optional widescreen size
+    prs.slide_height = Inches(7.5)
+
+    # 1. Cover Slide
+    slide = prs.slides.add_slide(prs.slide_layouts[0])
+    slide.shapes.title.text = "LearnWise"
+    slide.placeholders[1].text = "Stories that teach, AI that adapts"
+
+    # 2. Hook / Context
+    add_bullet_slide(prs, "Challenge: Literacy Gaps & SDG 4",
+                     ["Millions of children worldwide lack foundational reading skills.",
+                      "We must redefine access to inclusive, adaptive learning."])
+
+    # 3. Problem
+    add_bullet_slide(prs, "Problem",
+                     ["One-size-fits-all tools leave behind diverse learners.",
+                      "Remote & underserved learners lack personalized support."])
+
+    # 4. Solution
+    add_bullet_slide(prs, "Solution: LearnWise Platform",
+                     ["Interactive story modules with text, audio, visuals.",
+                      "AI adapts difficulty in real time based on learner responses.",
+                      "Built-in accessibility: text-to-speech, high-contrast, simple UI."])
+
+    # 5. Product / Demo
+    add_bullet_slide(prs, "Product Walkthrough",
+                     ["Narrated stories with comprehension checks.",
+                      "Adaptive difficulty slider adjusts content dynamically.",
+                      "Progress dashboard shows milestones and mastery."])
+
+    # 6. Market Opportunity
+    add_bullet_slide(prs, "Market Opportunity",
+                     ["EdTech is expanding rapidly, especially inclusive learning tools.",
+                      "Huge demand from schools, NGOs, and communities needing accessible platforms."])
+
+    # 7. Business Model
+    add_bullet_slide(prs, "Business Model",
+                     ["Freemium: core modules free to learners.",
+                      "Premium: advanced content, localization, school/NGO licensing.",
+                      "Supplement with grant funding & partnerships."])
+
+    # 8. Traction
+    add_bullet_slide(prs, "Traction & Pilot Interest",
+                     ["Positive feedback from 10+ educators and learners.",
+                      "8 schools ready to pilot LearnWise in next quarter."])
+
+    # 9. Competition / Differentiation
+    add_bullet_slide(prs, "Competition & Differentiators",
+                     ["Generic reading apps lack adaptivity or accessibility.",
+                      "LearnWise is unique: story-driven + AI + inclusivity built-in."])
+
+    # 10. Team
+    add_bullet_slide(prs, "Team",
+                     ["Founder/UX lead passionate about education equity.",
+                      "AI developer with NLP/adaptive learning experience.",
+                      "Educator partner ensuring pedagogical quality."])
+
+    # 11. Financials & Ask
+    add_bullet_slide(prs, "Funding Ask: $80K Seed",
+                     ["50% → Platform & AI development.",
+                      "30% → Content creation & localization.",
+                      "10% → Pilot rollout & testing.",
+                      "10% → Outreach & operations."])
+
+    # 12. Closing / CTA
+    add_bullet_slide(prs, "Join Us in Readable Futures",
+                     ["Make reading accessible, adaptive, and inclusive for all.",
+                      "Partner with LearnWise to reshape literacy globally."])
+
+    prs.save(filename)
+    print(f"Presentation saved as '{filename}'")
+
+if __name__ == "__main__":
+    create_learnwise_deck()
